@@ -1,8 +1,10 @@
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 6)
-timeout 15
+timeout 30
 preload_app true
+@dj_pid = nil
 
 before_fork do |server, worker|
+  @dj_pid ||= spawn('bundle exec rake jobs:work')
 
   Signal.trap 'TERM' do
     puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
