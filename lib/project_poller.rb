@@ -24,16 +24,9 @@ class ProjectPoller
 
   def run
     @run_once = false
-
-    EM.run do
-      EM.add_periodic_timer(@poll_period) do
-        poll_projects
-      end
-
-      EM.add_periodic_timer(@tracker_poll_period) do
-        poll_tracker
-      end
-    end
+    poll_projects
+    poll_tracker
+    ProjectPoller.new.delay(run_at: 10.minutes.from_now).run
   end
 
   def run_once
