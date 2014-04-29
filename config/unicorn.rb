@@ -4,7 +4,7 @@ preload_app true
 @dj_pid = nil
 
 before_fork do |server, worker|
-  @dj_pid ||= spawn('bundle exec rake start_workers[1]')
+  @dj_pid ||= spawn('bundle exec rake jobs:work')
 
   Signal.trap 'TERM' do
     puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
