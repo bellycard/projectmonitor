@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
+gem 'multi_json', '1.7.8'
 gem 'dalli'
 gem 'acts-as-taggable-on'
 gem 'airbrake'
