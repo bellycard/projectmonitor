@@ -33,7 +33,7 @@ gem 'whenever', require: false
 gem 'rails-backbone'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'eco'
-gem 'pg'
+gem 'mysql2'
 gem 'eventmachine'
 gem 'em-http-request'
 gem 'newrelic_rpm'
@@ -43,6 +43,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'clockwork'
 gem 'jbuilder'
 gem 'ruby-openid', '~>2.5.0'
+gem 'dotenv-rails'
+gem 'napa'
+gem 'asset_sync'
 
 group :production do
   gem 'rails_12factor'
