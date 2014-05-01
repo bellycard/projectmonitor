@@ -12,3 +12,10 @@
   $ ->
     new ProjectMonitor.Routers.HomeRouter({projects: projects})
     Backbone.history.start({pushState: true})
+    @scroll_to_top = true
+    animate = ->
+      scroll_location = if @scroll_to_top then 0 else $(document).height() - $(window).height()
+      @scroll_to_top = !@scroll_to_top
+      $('html, body').animate({ scrollTop: scroll_location }, 2000, animate)
+    animate()
+
