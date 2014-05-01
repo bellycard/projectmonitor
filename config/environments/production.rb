@@ -10,7 +10,7 @@ ProjectMonitor::Application.configure do
 
   config.assets.compress = true
   config.assets.digest = true
-  config.action_controller.asset_host = "//s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}"
+#  config.action_controller.asset_host = "//s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}"
 
   config.log_formatter = ::Logger::Formatter.new
   config.log_level = :info
