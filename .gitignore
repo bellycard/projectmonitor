@@ -1,5 +1,6 @@
 zeus.json
 .idea
+.env
 .bundle
 .DS_Store
 *.iml
