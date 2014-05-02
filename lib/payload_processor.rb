@@ -8,7 +8,7 @@ class PayloadProcessor
   def process_payload(project: nil, payload: nil)
     self.project = project
     self.payload = payload
-    add_statuses unless payload.type == "pull_request"
+    add_statuses
     update_building_status
     payload_log
   end
